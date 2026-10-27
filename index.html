@@ -84,6 +84,26 @@ section.alt{background:var(--cream)}
 footer{padding:32px 0;background:var(--deep);color:#fff}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:20px}
 footer small{font-size:11px;color:#e4c8d0}
+
+/* 授業テーマ・年度別活動記録 */
+.lesson-library-intro{max-width:860px;color:var(--muted);font-size:15px;margin-bottom:27px}
+.lesson-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.lesson-card{padding:24px;border:1px solid var(--line);background:#fff;border-radius:9px;box-shadow:0 3px 14px #51182908}
+.lesson-label{display:inline-block;color:var(--wine);font-size:11px;font-weight:700;background:#f7eef0;border-radius:20px;padding:3px 11px;margin-bottom:14px}
+.lesson-card h3{font-size:17px;line-height:1.55;margin:0 0 9px}
+.lesson-card p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
+.lesson-card .lesson-source{font-size:11px;margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+.lesson-disclaimer{color:var(--muted);font-size:12px;margin-top:20px}
+.year-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.year-entry{border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:7px;padding:21px 24px;background:#fff}
+.year-entry .year{font:700 16px Georgia,serif;color:var(--wine);display:block;margin-bottom:5px}
+.year-entry h3{font-size:17px;margin:0 0 7px}
+.year-entry p{font-size:13px;color:var(--muted);margin:0}
+.year-entry.pending{background:#fbf9f8;border-left-color:#d0bac0}
+.year-entry.pending .year{color:#7c6e73}
+.year-note{color:var(--muted);font-size:12px;margin:24px 0 0}
+@media(max-width:760px){.lesson-grid,.year-grid{grid-template-columns:1fr}.lesson-card,.year-entry{padding:22px}}
+
 @media(max-width:760px){
   .header-inner{display:block;padding:15px 0}
   nav{padding-top:12px;gap:16px}
@@ -106,7 +126,8 @@ footer small{font-size:11px;color:#e4c8d0}
     <a class="brand" href="#top">法学教室 Street Law<small>WASEDA STREET LAW</small></a>
     <nav aria-label="メインメニュー">
       <a href="#activity">活動内容</a>
-      <a href="#history">歴史</a>
+      <a href="#library">授業テーマ</a>
+      <a href="#history">歩み</a>
       <a href="#achievements">実績</a>
       <a href="#application">授業申込</a>
       <a href="#contact">連絡先</a>
@@ -145,22 +166,55 @@ footer small{font-size:11px;color:#e4c8d0}
   </div>
 </section>
 
-<section class="content alt" id="history">
+<section class="content alt" id="library">
   <div class="container">
-    <div class="section-heading"><div><p class="eyebrow">OUR HISTORY</p><h2>Street Lawの歴史</h2></div></div>
-    <div class="timeline">
-      <div class="event"><time>2014</time><h3>法学教室Street Law 設立</h3><p>早稲田大学の法教育団体として活動を開始。</p></div>
-      <div class="event"><time>2018–2020</time><h3>法教育祭りへの参加</h3><p>他の法教育団体とも関わりながら、中高生などに向けた法教育活動に取り組みました。</p></div>
-      <div class="event"><time>2025</time><h3>活動10周年を記念する企画・新規開拓の取り組み</h3><p>これまでの活動を振り返るとともに、新たな授業実施先の開拓にも取り組みました。</p></div>
-      <div class="event"><time>2026</time><h3>広尾学園での出張授業</h3><p>アルバイトと労働法をテーマに、高校生向けの参加型授業を実施しました。</p></div>
+    <div class="section-heading"><div><p class="eyebrow">LESSON LIBRARY</p><h2>これまでに生まれた授業テーマ</h2></div></div>
+    <p class="lesson-library-intro">2014年の設立以来、身近な出来事を切り口とした法教育の授業案を蓄積してきました。これまでに実施した授業を中心に、教材が残るテーマをご紹介します。対象学年や授業時間に応じて内容を調整します。</p>
+    <div class="lesson-grid">
+      <article class="lesson-card"><span class="lesson-label">生活・消費</span><h3>アルバイトと労働法</h3><p>賃金、労働時間、解雇などの身近な事例を、働く側・雇う側の両方から考える。</p><p class="lesson-source">過去の実施・教材例：少年院・広尾学園など</p></article>
+      <article class="lesson-card"><span class="lesson-label">生活・消費</span><h3>契約って何だろう？</h3><p>買い物や約束を入り口に、契約の成立、効力、無効・取消しとトラブルへの対処を学ぶ。</p><p class="lesson-source">過去の実施・教材例：赤城少年院・茨城農芸学院</p></article>
+      <article class="lesson-card"><span class="lesson-label">情報・SNS</span><h3>SNS上の誹謗中傷と名誉毀損</h3><p>事実の投稿や拡散がいつ法的問題になるのか、表現の自由と名誉保護の関係を考える。</p><p class="lesson-source">過去の実施・教材例：高等学院・水府学院</p></article>
+      <article class="lesson-card"><span class="lesson-label">情報・SNS</span><h3>プライバシーと炎上への対応</h3><p>公開・非公開アカウントでの発信、侮辱やプライバシー侵害、削除・開示請求などを考える。</p><p class="lesson-source">過去の実施・教材例：水府学院</p></article>
+      <article class="lesson-card"><span class="lesson-label">法と社会</span><h3>法やルールはなぜあるの？</h3><p>交通ルールや自力救済の例から、法律が自由を制限する理由と、人を守る働きを考える。</p><p class="lesson-source">過去の実施・教材例：茨城農芸学院</p></article>
+      <article class="lesson-card"><span class="lesson-label">法と社会</span><h3>法律を評価し、ルールをつくる</h3><p>動物をめぐる規制を素材に、目的の正当性、手段の有効性、規制の行き過ぎを議論する。</p><p class="lesson-source">過去の実施・教材例：法教育祭り・川内村中学校</p></article>
+      <article class="lesson-card"><span class="lesson-label">刑法</span><h3>正当防衛と『やり返す』こと</h3><p>とっさの反撃や仕返しの事例を比較し、正当防衛が認められる条件を考える。</p><p class="lesson-source">過去の実施・教材例：高等学院</p></article>
+      <article class="lesson-card"><span class="lesson-label">刑法</span><h3>何もしないことが犯罪になる？</h3><p>溺れている人を助けなかった場合などから、不作為犯と作為義務を検討する。</p><p class="lesson-source">過去の実施・教材例：高等学院</p></article>
+      <article class="lesson-card"><span class="lesson-label">刑法</span><h3>行為と結果を結ぶ『因果関係』</h3><p>途中で別の事情が介在した場合に、誰が結果の責任を負うのかを判例素材で考える。</p><p class="lesson-source">過去の実施・教材例：高等学院</p></article>
+      <article class="lesson-card"><span class="lesson-label">刑法</span><h3>故意はどうやって判断する？</h3><p>『そんなつもりはなかった』という発言と具体的な状況から、殺人の故意を判断する。</p><p class="lesson-source">過去の実施・教材例：高等学院</p></article>
+      <article class="lesson-card"><span class="lesson-label">刑法</span><h3>犯罪と時間――公訴時効</h3><p>古い事件を処罰すべきかを検察官・弁護人の立場から考え、時効制度の意義を検討する。</p><p class="lesson-source">過去の実施・教材例：法教育祭り</p></article>
+      <article class="lesson-card"><span class="lesson-label">災害・社会課題</span><h3>災害復興と法</h3><p>被災後の生活再建を例に、請求・法的根拠・要件・効果の関係を考える。</p><p class="lesson-source">過去の実施・教材例：高等学院</p></article>
     </div>
-    <p class="note">※沿革の詳細は過年度資料を確認のうえ、順次追加予定です。</p>
+    <p class="lesson-disclaimer">※過年度資料をもとにした授業テーマの一覧です。法改正や判例の変化を踏まえた内容確認が必要なものもあります。各テーマの実施可否・時間・内容は、ご相談を受けて個別に調整します。過年度の授業資料は、公開可能な範囲を確認してから掲載します。</p>
+    <div class="buttons"><a class="btn primary" href="#application">授業について相談する</a></div>
+  </div>
+</section>
+
+<section class="content" id="history">
+  <div class="container">
+    <div class="section-heading"><div><p class="eyebrow">OUR HISTORY</p><h2>Street Lawの歩み ― 2014年から</h2></div></div>
+    <p class="lesson-library-intro">学校で、少年院で、地域の中で。どのようなテーマを選び、何を考えてきたのかを年度ごとに振り返ります。</p>
+    <div class="year-grid">
+      <article class="year-entry"><span class="year">2014年度</span><h3>団体設立</h3><p>12月26日、法学教室Street Lawが設立されました。</p></article>
+      <article class="year-entry pending"><span class="year">2015年度</span><h3>活動記録を整理中</h3><p>この年度の具体的な授業資料は、現在確認できていません。</p></article>
+      <article class="year-entry pending"><span class="year">2016年度</span><h3>活動記録を整理中</h3><p>この年度の具体的な授業資料は、現在確認できていません。</p></article>
+      <article class="year-entry pending"><span class="year">2017年度</span><h3>過去の高等学院授業を確認中</h3><p>後年の授業案には『高瀬舟』を題材とした授業への言及があります。実施年月は確認中です。</p></article>
+      <article class="year-entry"><span class="year">2018年度</span><h3>不作為犯と公訴時効</h3><p>高等学院で『何もしないことが悪いこと？』を扱い、法教育祭りでは刑事事件の公訴時効をテーマに授業を実施。八街少年院では労働に関する法律を取り上げました。</p></article>
+      <article class="year-entry"><span class="year">2019年度</span><h3>正当防衛と法律づくり</h3><p>高等学院で『「やられたらやり返す」は許されるか？』を検討。法教育祭りでは動物に関するルールを素材に、法律の目的と規制手段を考えました。</p></article>
+      <article class="year-entry"><span class="year">2020年度</span><h3>オンライン授業への挑戦</h3><p>高等学院でSNSの投稿と名誉毀損をテーマにオンライン授業を実施。川内村中学校向けの授業では、法律を評価する視点や合意形成を扱いました。</p></article>
+      <article class="year-entry"><span class="year">2021年度</span><h3>正当防衛を深く考える</h3><p>高等学院の政経特論で、要件・効果を学んでから正当防衛の事例と判例を検討するオンライン授業を行いました。</p></article>
+      <article class="year-entry"><span class="year">2022年度</span><h3>因果関係、SNS、働くルール</h3><p>高等学院で刑法の因果関係を検討。水府学院ではSNS上の誹謗中傷と労働関係について法教育授業を実施しました。</p></article>
+      <article class="year-entry"><span class="year">2023年度</span><h3>不作為犯、契約、労働</h3><p>高等学院で不作為犯の成立範囲を議論。少年院向けには契約や労働上のトラブルを題材とする授業資料・報告書が残っています。</p></article>
+      <article class="year-entry"><span class="year">2024年度</span><h3>故意の判断と法の役割</h3><p>高等学院で殺人の故意を事実から考える授業を実施。茨城農芸学院では『法やルールとわたしたち』をテーマに、法が人を守る意義を扱いました。</p></article>
+      <article class="year-entry"><span class="year">2025年度</span><h3>災害復興と法、SNS、10周年</h3><p>高等学院で災害復興支援の法制度を題材に授業を実施。水府学院ではSNSの誹謗中傷・プライバシー・炎上を扱い、2026年3月には創立10周年記念イベントを開催しました。</p></article>
+      <article class="year-entry"><span class="year">2026年度</span><h3>新たな学校への出張授業</h3><p>広尾学園で『大学生になる前に知るアルバイトと労働法』をテーマに、8クラスを対象とする授業を実施。新たな授業先の開拓にも取り組んでいます。</p></article>
+    </div>
+    <p class="year-note">※年度は4月〜翌年3月です。過年度の授業資料・実施報告書をもとに作成しています。2015〜2017年度の活動記録や一部の実施年月は確認中であり、「確認中」は活動がなかったことを意味しません。</p>
   </div>
 </section>
 
 <section class="content" id="achievements">
   <div class="container">
-    <div class="section-heading"><div><p class="eyebrow">OUR ACHIEVEMENTS</p><h2>これまでの活動実績</h2></div></div>
+    <div class="section-heading"><div><p class="eyebrow">OUR ACHIEVEMENTS</p><h2>主な活動先・取り組み</h2></div></div>
     <div class="works">
       <article class="work"><div class="work-mark">01</div><div><h3>早稲田大学高等学院</h3><p>高校生を対象に、身近な法律問題について考え、議論する法教育授業に取り組んでいます。</p></div></article>
       <article class="work"><div class="work-mark">02</div><div><h3>少年院での法教育</h3><p>少年院における法教育プログラムの企画・実施を行っています。</p></div></article>
@@ -200,7 +254,7 @@ footer small{font-size:11px;color:#e4c8d0}
       </div>
       <a class="btn" href="mailto:wlsstreetlaw@gmail.com?subject=Street%20Law%20%E5%87%BA%E5%BC%B5%E6%8E%88%E6%A5%AD%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">メールで相談する →</a>
     </div>
-    <p class="note">※授業テーマの掲載内容は仮案です。対応可能な授業案は団体内で確認後、正式に更新します。</p>
+    <p class="note">※上記はご相談いただけるテーマの一例です。<a href="#library" style="text-decoration:underline">過去の授業テーマ一覧</a>もご覧ください。</p>
   </div>
 </section>
 
